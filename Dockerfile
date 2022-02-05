@@ -4,6 +4,14 @@ FROM ubuntu
 # set users cfg file
 ARG USERS_CFG=users.json
 
+ARG BRAT_USERNAME
+ARG BRAT_PASSWORD
+ARG BRAT_EMAIL
+
+ENV BRAT_USERNAME=$BRAT_USERNAME
+ENV BRAT_PASSWORD=$BRAT_PASSWORD
+ENV BRAT_EMAIL=$BRAT_EMAIL
+
 # Install pre-reqs
 RUN apt-get update
 RUN apt-get install -y curl vim sudo wget rsync git

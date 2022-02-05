@@ -1,0 +1,25 @@
+##
+# docker-compose up [-d]
+# docker-compose down
+##
+version: "3.5"
+
+services:
+    brat:
+        container_name: brat
+        restart: always
+        build:
+            context: .
+            args:
+                - BRAT_USERNAME=${BRAT_USERNAME}
+                - BRAT_PASSWORD=${BRAT_PASSWORD}
+                - BRAT_EMAIL=${BRAT_EMAIL}
+        ports:
+            - "80:80"
+        volumes:
+            - "brat-data:/bratdata"
+            - "brat-cfg:/bratcfg"
+
+volumes:
+    brat-data:
+    brat-cfg:
