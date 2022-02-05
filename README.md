@@ -22,7 +22,7 @@ docker compose up -d
 3. Add apache users to the running instance to allow entry to the brat application
 ```bash
 docker exec -ti brat bash
-> htpasswd -c /etc/apache2/.htpasswd [USERNAME]
+> htpasswd -c /bratcfg/.htpasswd [USERNAME]
 ```
 Replace `[USERNAME]` with the user name and follow the prompts to enter a password. Once complete, the user/password entered will allow the user to access BRAT, but not login to brat.
 
